@@ -11,9 +11,10 @@ class IndexController extends Zend_Controller_Action
     public function indexAction()
     {
         $this->view->pagina = 'cadastra';
-        
-        
+        $model = new Application_Model_Cadastro();
         $form = new Application_Form_Cadastrar();
+        
+        
         $this->view->status = $form->setStatusSelect('status');
         $this->view->cliente = $form->setText('cliente', 35);
         $this->view->tituloProjeto = $form->setText('tituloProjeto', 55);
@@ -45,6 +46,38 @@ class IndexController extends Zend_Controller_Action
                             $this->view->ProjetoServico,
                             $this->view->ob,
                             $this->view->submit));
+        
+        if($this->getRequest()->isPost()) {
+            $dados = $this->getRequest()->getPost();
+            $requisicao = $this->getRequest();
+            if($form->isValid($dados)) {
+                $inserir = array(
+               'status' => $requisicao->getPost('status'),
+               'cliente' => $requisicao->getPost('cliente'),
+               'titulo' => $requisicao->getPost('tituloProjeto'),
+               'subprojetofai' => $requisicao->getPost('subProjetoFAI'),
+               'unidade' => $requisicao->getPost('unidade'),
+               'resumo' => $requisicao->getPost('resumo'),
+               'origem' => $requisicao->getPost('origem'),
+               'dataaprovacao' => $model->dataToMysql($requisicao->getPost('dataAprovacao')),
+               'duracao' => $requisicao->getPost('duracaoProjeto'),
+               'dataprevistainicio' => $model->dataToMysql($requisicao->getPost('dataPrevistaIni')),
+               'dataprevistatermino' => $model->dataToMysql($requisicao->getPost('dataPrevistaTer')),
+               'valorproposto' => $model->arrumaValor($requisicao->getPost('ValorProposto')),
+               'categoria' => $requisicao->getPost('categoria'),
+               'ob' => $requisicao->getPost('ob')
+            );
+        
+        
+        
+            $res = $model->Inserir($inserir);
+        
+            if($res) {
+                echo "<script>alert('Cadastrado com sucesso !');window.location='index';</script>";
+            }else 
+                echo "<script>alert('Oppps, This shoudl not happen. Contact Lucas Testa');</script>";
+            }
+        }      
     }
 
     public function alterarAction()

@@ -13,6 +13,13 @@ class Application_Model_Cadastro
         $retorno = $retorno[2] . "-" . $retorno[1] . "-" . $retorno[0];
         return $retorno;
     }
+    
+    public function Inserir($dados) {
+        $db_table = new Application_Model_DbTable_Projetos();
+        if($db_table->Cadastrar($dados))
+            return true;
+        return false;
+    }
 
 }
 

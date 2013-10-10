@@ -86,7 +86,33 @@ class IndexController extends Zend_Controller_Action
 
     public function alterarAction()
     {
-        // action body
+        $this->view->pagina = 'altera';
+        $form = new Application_Form_Alterar();
+        $model = new Application_Model_Alteracao();
+        
+        $this->view->unidadeBusca = $form->setUnidadeSelect('unidadeBusca', true);
+        $this->view->statusBusca = $form->setStatusSelect('statusBusca', true);
+        $this->view->submitBusca = $form->setButton('Buscar');
+        $this->view->unidadeBusca = $form->setUnidadeSelect('unidadeBusca');
+        $this->view->statusBusca = $form->setStatusSelect('statusBusca');
+        $this->view->submitBusca = $form->setSubmit('Buscar');
+        $this->view->tabela = $model->parseToTable();
+        
+        $this->view->status = $form->setStatusSelect('status');
+        $this->view->cliente = $form->setText('cliente', 35);
+        $this->view->tituloProjeto = $form->setText('tituloProjeto', 55);
+        $this->view->subProjetoFAI = $form->setText('subProjetoFAI', 35);
+        $this->view->unidade = $form->setUnidadeSelect('unidade');
+        $this->view->resumo = $form->setTextArea('resumo', 12, 50);
+        $this->view->origem = $form->setTextArea('origem', 12, 50);
+        $this->view->dataAprovacao = $form->setText('dataAprovacao', 25,true,  array('class' => 'data'));
+        $this->view->duracaoProjeto = $form->setText('duracaoProjeto', 25,true,  array('onkeypress' => 'return SomenteNumero(event)'));
+        $this->view->dataPrevistaIni = $form->setText('dataPrevistaIni', 25,true, array('class' => 'data'));
+        $this->view->dataPrevistaTer = $form->setText('dataPrevistaTer', 25, true, array('class' => 'data'));
+        $this->view->valorProposto = $form->setText('valorProposto', 20, true, array('class' => 'money'));
+        $this->view->ProjetoServico = $form->setRadioServico('categoria');
+        $this->view->ob = $form->setTextArea('ob', 12, 55);
+        $this->view->submit = $form->setSubmit('Alterar');
     }
 
     public function acompanharAction()

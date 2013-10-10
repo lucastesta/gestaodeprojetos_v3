@@ -1,0 +1,19 @@
+<html>
+    <head>       
+        <title></title>
+        <?php echo $this->headMeta();?>
+
+        <?php echo $this->headScript(); ?>
+        <?php echo $this->headLink(); ?>
+    </head>
+    <body>
+        <?php echo $this->render('header.phtml'); ?>
+        <?php echo $this->render('nav.phtml'); ?>
+        <div id="conteudo">
+            <div id="<?php echo $this->pagina; ?>">
+                <?php echo $this->layout()->content; ?>
+            </div>
+        </div>
+        
+    </body>
+</html>

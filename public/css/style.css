@@ -1,0 +1,275 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Ubuntu';
+}
+
+header {
+    height: 100px;
+    width: 100%;
+}
+
+#logo_tipo {
+    width: 821px;
+    height: 100px;
+    background: url('/images/Projetos2.jpg');
+    margin: auto;
+}
+
+nav {
+    width: 100%;
+    background-color: #CC0000;
+    height: 35px;
+    	box-shadow:3px 3px 3px #000;
+}
+
+nav ul {
+    text-align: center;
+    height: 30px;
+    list-style: none;
+    padding-top:5px;
+    width: 800px;
+    margin: auto;
+}
+
+nav ul li {
+	display:inline;
+	margin-right:1px;
+}
+
+nav ul li a {
+	padding:15px 10px;
+	text-decoration:none;
+	font-family: Ubuntu, 'Electrolize', sans-serif;
+	color:#FFF;
+	font-size:1.2em;
+	transition: all .3s ease-out;
+}
+
+nav ul li a:hover {
+	color: #000;
+}
+
+
+#conteudo {
+    width: 100%;
+}
+
+
+#cadastra {
+    	min-width:1170px;
+	width:1200px;
+	max-width:3000px;
+	border:1px solid #000;
+	font-family:Ubuntu;
+	margin:auto;
+	margin-top:70px;
+	height: auto;
+	border-radius:0.9%;
+}
+
+#altera {
+    	min-width:1170px;
+	width:1200px;
+	max-width:3000px;
+	border:1px solid #000;
+	font-family:Ubuntu;
+	margin:auto;
+	margin-top:70px;
+	height: auto;
+	border-radius:0.9%;
+}
+
+
+.titulo_conteudo {
+        height:30px;
+	text-align:center;
+	background-color:#C00000;
+	font-size: 1.2em;
+	color:#fff;
+	padding-top:1px;
+}
+
+.margem {
+	padding-left:20px;
+	padding-bottom:15px;
+}
+
+label {
+	font-family:Times;
+}
+
+.sub_label {
+	color:#778899;
+}
+
+select {
+	height:25px;
+
+}
+
+dt {
+    height: 0px;
+}
+
+.separador {
+    height: 20px;
+    background-color: #BEBEBE;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+    margin-bottom: 10px;
+}
+
+.esquerda {
+    margin-right: 200px;
+    float:left;
+}
+
+.direita {
+    float:right;
+}
+
+#corrido {
+    display: inline-block;
+   
+}
+
+#clear {
+    both: clear;
+}
+
+#dataapp {
+    width: 250px;
+    height: 60px;
+    float: left;
+}
+
+#dataproj {
+    float:left;
+    width:250px;
+    height:60px;
+    margin-left:50px;
+}
+
+#dataprevistainicio {
+    float:left;
+    width:250px;
+    height:60px;
+    margin-left: 50px;
+}
+
+#dataprevistatermino {
+    float:left;
+    width:250px;
+    height:60px;
+    margin-left: 50px;
+}
+
+#prazos_div {
+    display: block;
+    height: 100px;
+}
+
+
+input[type=submit], button {
+    background-color: #C00000;
+    color: #FFF;
+    font-size: 20px;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    margin-left: 500px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+
+.errors {
+    color: #CC0000;
+    font-style: italic;
+    padding-left:10px;
+}
+
+.buscador {
+    border:1px solid black;
+    width:920px;
+    height: 400px;
+    margin: auto;
+}
+
+.unidade_busca {
+    height: 60px;
+    width: 200px;
+    float: left;
+}
+
+#busca {
+    border-bottom: 1px solid #000;
+    height: 65px;
+    width: 920px;
+    margin: auto;
+}
+
+.status_busca {
+    height: 60px;
+    width: 200px;
+    float: left;
+    margin-left: 10px;
+}
+
+.botao_pesquisa {
+    height: 60px;
+    width: 200px;
+    float: left;
+    margin-left: 10px;
+}
+
+#submitBusca {
+    margin: 0;
+}
+
+
+.styled-select {
+    font-size: 14px;
+    -webkit-appearance: menulist-button;
+    width: 149px;  
+    height: 30px;
+    margin-top: 2px;
+}
+
+
+.customSelect {
+	background-color: #f5f0de;
+	color:#000;
+	width:140px;
+	padding-left:5px;
+        padding-top: 5px;
+	height:20px;
+	/*border:1px solid #e7dab0;*/
+	border:2px solid #C00000;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px 5px;
+	/*-webkit-appearance: menulist-button;*/
+	font-family: "Bree Serif", serif;
+	font-size:13px;
+	font-weight:bold;
+	box-shadow:3px 3px 3px #000;
+}
+
+#submitBusca {
+    margin-top: 20px;
+    height: 35px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px 5px;
+    font-weight: bold;
+}
+
+
+table {
+    border: 1px solid blue;
+    width: 920px;
+    margin: auto;
+    margin-top: 10px;
+}

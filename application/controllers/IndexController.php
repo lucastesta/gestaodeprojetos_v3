@@ -63,7 +63,7 @@ class IndexController extends Zend_Controller_Action
                'duracao' => $requisicao->getPost('duracaoProjeto'),
                'dataprevistainicio' => $model->dataToMysql($requisicao->getPost('dataPrevistaIni')),
                'dataprevistatermino' => $model->dataToMysql($requisicao->getPost('dataPrevistaTer')),
-               'valorproposto' => $model->arrumaValor($requisicao->getPost('ValorProposto')),
+               'valorproposto' => $model->arrumaValor($requisicao->getPost('valorProposto')),
                'categoria' => $requisicao->getPost('categoria'),
                'ob' => $requisicao->getPost('ob')
             );
@@ -76,7 +76,11 @@ class IndexController extends Zend_Controller_Action
                 echo "<script>alert('Cadastrado com sucesso !');window.location='index';</script>";
             }else 
                 echo "<script>alert('Oppps, This shoudl not happen. Contact Lucas Testa');</script>";
-            }
+          }
+          else {
+              echo "<script>alert('Campos inválidos');</script>";
+              $form->populate($dados);
+          }
         }      
     }
 

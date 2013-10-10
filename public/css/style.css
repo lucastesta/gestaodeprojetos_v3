@@ -192,7 +192,7 @@ input[type=submit], button {
 
 .buscador {
     border:1px solid black;
-    width:920px;
+    width:1000px;
     height: 400px;
     margin: auto;
 }
@@ -206,7 +206,7 @@ input[type=submit], button {
 #busca {
     border-bottom: 1px solid #000;
     height: 65px;
-    width: 920px;
+    width: 1000px;
     margin: auto;
 }
 
@@ -268,8 +268,104 @@ input[type=submit], button {
 
 
 table {
-    border: 1px solid blue;
     width: 920px;
     margin: auto;
     margin-top: 10px;
 }
+
+
+
+#tabela1_wrapper {
+	margin:auto;
+	margin-top: 10px;
+	margin-bottom:10px;
+	width:1000px;
+		
+}
+
+ #tabela1_paginate {
+	margin-top:5px;
+	margin-bottom:10px;
+}
+
+#tabela1_length {
+	background-color:#ad2525;
+	color:#fff;
+	padding-left:5px;
+	width:490px;
+	height:25px;
+}
+
+#tabela1_filter {
+	background-color:#ad2525;
+	color:#fff;
+	height:24px;
+	padding-top:1px;
+	padding-right:5px;
+}
+
+#tabela1_info {
+	margin-top:1px;
+	background-color:#ad2525;
+	height:25px;
+	width:575px;
+	color:#fff;
+	padding-top:8px;
+	padding-left:5px;
+}
+
+#tabela1_first {
+	background-color:#fff;
+	font-weight:bold;
+	font-size:1.1em;
+}
+
+
+
+#tabela1_previous {
+	background-color:#fff;
+	font-weight:bold;
+	font-size:1.1em;
+}
+
+
+#tabela1_next {
+	background-color:#fff;
+	font-weight:bold;
+	font-size:1.1em;
+}
+
+
+#tabela1_last {
+	background-color:#fff;
+	font-weight:bold;
+	font-size:1.1em;
+}
+
+.paging_full_numbers a.paginate_active {
+	background-color:#BEBEBE;
+	font-size:1.1em;
+}
+
+.paging_full_numbers a.paginate_button {
+	background-color:#fff;
+	font-weight:bold;
+	font-size:1.1em;
+}
+#tabela1_paginate {
+	margin-top:1px;
+	background-color:#ad2525;
+	height:28px;
+	padding-top:5px;
+	padding-right:20px;
+}
+table.dataTable {}
+table.dataTable tr.odd { background-color:  #FFFFCC;font-size:13px; }
+table.dataTable tr.odd td.sorting_1{ background-color:  #FFFFCC; }
+#tabela1 tbody tr.odd:hover td{transition: all .1s ease-in; background-color:#C00000;color:#fff;}
+
+
+
+table.dataTable tr.even { background-color: #FFF;font-size:13px;}
+table.dataTable tr.even td.sorting_1{ background-color: #FFF;}
+#tabela1 tbody tr.even:hover td{transition: all .1s ease-in; background-color:#C00000;color:#fff;}

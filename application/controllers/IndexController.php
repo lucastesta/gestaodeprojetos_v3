@@ -95,7 +95,6 @@ class IndexController extends Zend_Controller_Action
         $this->view->submitBusca = $form->setButton('Buscar');
         $this->view->unidadeBusca = $form->setUnidadeSelect('unidadeBusca');
         $this->view->statusBusca = $form->setStatusSelect('statusBusca');
-        $this->view->submitBusca = $form->setSubmit('Buscar');
         $this->view->tabela = $model->parseToTable();
         
         $this->view->status = $form->setStatusSelect('status');

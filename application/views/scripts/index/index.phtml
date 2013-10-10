@@ -1,43 +1,91 @@
-<style>
-    a:link,
-    a:visited
-    {
-        color: #0398CA;
-    }
-
-    span#zf-name
-    {
-        color: #91BE3F;
-    }
-
-    div#welcome
-    {
-        color: #FFFFFF;
-        background-image: url(http://framework.zend.com/images/bkg_header.jpg);
-        width:  600px;
-        height: 400px;
-        border: 2px solid #444444;
-        overflow: hidden;
-        text-align: center;
-    }
-
-    div#more-information
-    {
-        background-image: url(http://framework.zend.com/images/bkg_body-bottom.gif);
-        height: 100%;
-    }
-</style>
-<div id="welcome">
-    <h1>Welcome to the <span id="zf-name">Zend Framework!</span></h1>
-
-    <h3>This is your project's main page</h3>
-
-    <div id="more-information">
-        <p><img src="http://framework.zend.com/images/PoweredBy_ZF_4LightBG.png" /></p>
-        <p>
-            Helpful Links: <br />
-            <a href="http://framework.zend.com/">Zend Framework Website</a> |
-            <a href="http://framework.zend.com/manual/en/">Zend Framework Manual</a>
-        </p>
+<h1 class="titulo_conteudo">Cadastro de Projetos</h1>
+<form method="post" action="/">
+    <br />
+    <div id="status" class="margem">
+        <label class="label">Status do Projeto</label>
+        <br />
+        <label class="sub_label">Escolha o status do projeto</label>
+        <?php echo $this->status; ?>
     </div>
-</div>
+    <h4 class="separador margem" id="dados">Dados do Projeto</h4>
+    <div id="dados_projeto" class="margem">
+        <br/>
+        <label class="label">Cliente</label>
+        <br />
+        <label class="sub_label">Insira o nome do cliente do projeto</label>
+        <?php echo $this->cliente; ?>
+        <br/>
+        <label class="label">Título do Projeto</label>
+        <br/>
+        <label class="sub_label">Insira o título do projeto</label>
+        <?php echo $this->tituloProjeto; ?>
+        <br/>
+        <div id="corrido">
+            <div class="esquerda">
+                <label class="label">SubProjeto FAI</label>
+                <br/>
+                <label class="sub_label">Insira o código do projeto na FAI</label>        
+                <?php echo $this->subProjetoFAI;  ?>
+            </div>
+            <div class="direita">
+                <label class="label">Unidade de Negócio</label>
+               <br/>
+               <label class="sub_label">Escolha a UN do CCDM que coordena o projeto</label>
+               <?php echo $this->unidade; ?>
+            </div>
+        </div>
+        <br/>
+        <label class="label">Resumo do Projeto</label>
+        <br/>
+        <label class="sub_label">Insira o resumo do projeto</label>
+        <?php echo $this->resumo; ?>
+        <br/>
+        <label class="label">Origem do(s) recurso(s)</label>
+        <br/>
+        <label class="sub_label">Insira a(s) fonte(s) dos recursos do projeto</label>
+        <?php echo $this->origem; ?>
+     </div>
+    <h4 class="separador margem" id="prazos">Prazos</h4>
+    <div id="prazos_div" class="margem">
+        <br/>
+        <div id="dataapp">
+            <label class="label">Data de Aprovação</label>
+            <br/>
+            <label class="sub_label">Insira a data de aprovação do projeto</label>
+            <?php echo $this->dataAprovacao; ?>
+        </div>
+        <div id="dataproj">
+            <label class="label">Duração do Projeto (em meses)</label>
+            <br/>
+            <label class="sub_label">Insira a duração do projeto</label>
+            <?php echo $this->duracaoProjeto; ?>
+        </div>
+        <div id="dataprevistainicio">
+            <label class="label">Data Prevista de Início</label>
+            <br/>
+            <label class="sub_label">Insira a data prevista de início</label>
+            <?php echo $this->dataPrevistaIni; ?>
+        </div>
+        <div id="dataprevistatermino">
+            <label class="label">Data Prevista de Término</label>
+            <br/>
+            <label class="sub_label">Insira a data prevista de término</label>
+            <?php echo $this->dataPrevistaTer; ?>
+        </div>
+    </div>
+    <h4 class="separador margem" id="financeiro">Financeiro</h4>
+    <div id="financeiro_div" class="margem">
+        <br/>
+        <label class="label">Valor proposto do projeto (em R$)</label>
+        <br/>
+        <label class="sub_label">Insira o valor total proposto para o projeto</label>
+        <?php echo $this->valorProposto; ?>
+        <br/>
+        <label class="label">Esse projeto é ?</label>
+        <?php echo $this->ProjetoServico; ?>
+        <br/>
+        <label class="label">Observações</label>
+        <?php echo $this->ob; ?>  
+    </div>
+    <?php echo $this->submit; ?>
+</form>

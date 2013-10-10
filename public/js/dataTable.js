@@ -1,10 +1,10 @@
 $(document).ready(function() {
-    $('#tabela1').dataTable({
+         var tabela = $('#tabela1').dataTable({
 	"sPaginationType": "full_numbers",
 	"aLengthMenu": [[5, 10, 20, -1], [5, 10, 20, "Todos"]],
 	"iDisplayLength": 5,
 	    "oLanguage": {
-		"sInfo": "Visualizando _START_ -  _END_  || Total de páginas: _TOTAL_",
+		"sInfo": "Visualizando _START_ -  _END_  || Número de Registros: _TOTAL_",
 		"sLengthMenu": "Exibir _MENU_ registros",
 		"sEmptyTable": "Nenhum registro encontrado",
 		"sInfoEmpty": "Nenhum registro encontrado",
@@ -18,5 +18,9 @@ $(document).ready(function() {
 		"sPrevious": "Anterior"
 	      }
         }
+    });
+    
+    $('#submitBusca').click(function() {
+        tabela.fnDestroy();
     });
 });

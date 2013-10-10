@@ -121,7 +121,11 @@ class IndexController extends Zend_Controller_Action
 
     public function buscarAction()
     {
-        // action body
+        $this->getHelper('layout')->disableLayout();
+        
+        
+        $model = new Application_Model_Alteracao();
+        $this->view->tabela = $model->Busca($this->getRequest()->getPost('status'), $this->getRequest()->getPost('unidade'));
     }
 
 

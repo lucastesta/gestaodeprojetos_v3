@@ -12,6 +12,7 @@ class Application_Form_Alterar extends Zend_Form
     public function setStatusSelect($nome) {
         $status = new Zend_Form_Element_Select($nome);
         $status->setMultiOptions(array(
+            '0' => 'Todos',
             '1' => 'Em Prospecção',
             '2' => 'Em Andamento',
             '3' => 'Recusado',
@@ -41,6 +42,7 @@ class Application_Form_Alterar extends Zend_Form
     public function setUnidadeSelect($nome){
         $unidade = new Zend_Form_Element_Select($nome);
         $unidade->setMultiOptions(array(
+            '0' => 'Todos',
             '1' => 'UN Combustíveis',
             '2' => 'UN Metais/Cerâmicas',
             '3' => 'UN Polímeros',
@@ -80,7 +82,6 @@ class Application_Form_Alterar extends Zend_Form
     public function setButton($name) {
         $campo = new Zend_Form_Element_Button($name);
         $campo->setValue('Buscar');
-        $campo->setAttrib('onclick','javascript:funciona();');
         $campo->setAttrib('id', 'submitBusca');
         return $campo;
     }

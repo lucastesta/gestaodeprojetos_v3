@@ -54,5 +54,27 @@ class Application_Model_Alteracao
                    break;
             }
      }
+     
+     public function parseToTable2($vetor) {
+         foreach($vetor as $t) {
+            $saida .= "<tr>";
+            $saida .= "<td>" . $this->decidiStatus($t['status']) . "</td>";
+            $saida .= "<td>" . $this->decidiUnidade($t['unidade']) . "</td>";
+            $saida .= "<td>" . $t['titulo'] . "</td>";
+            $saida .= "<td>" . $t['cliente'] . "</td>";
+            $saida .= "<td>" . $t['subprojetofai'] . "</td>";
+            $saida .= "</tr>";
+         }
+         return $saida;
+     }
+     
+     public function Busca($status = '', $unidade = '') {
+         $db_table = new Application_Model_DbTable_Projetos();
+         if($status == '' && $unidade == '')
+             return;
+         else {
+             return $this->parseToTable($db_table->Busca($status, $unidade));
+         }
+     }
 }
 

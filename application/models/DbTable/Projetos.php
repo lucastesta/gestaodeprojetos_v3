@@ -21,8 +21,7 @@ class Application_Model_DbTable_Projetos extends Zend_Db_Table_Abstract
     
     public function Busca($status = 0, $unidade = 0) {
         if($status == 0 && $unidade == 0){
-            $resultado = $this->select();
-            return $resultado->fetchAll();
+            return $this->buscarTodos();
         }
         else
         if($status == 0 && $unidade != 0) {
@@ -32,13 +31,15 @@ class Application_Model_DbTable_Projetos extends Zend_Db_Table_Abstract
         }
         else
         if($status !=0 && $unidade == 0) {
-            //return $this->fetchAll($this->select()->where('status = ?', $status));
-            return 'kk2';
+            $w = "status = " . $status;
+            $sql = $this->select()->where($w);
+            return $this->fetchAll($sql);
         }
         else
         if($status != 0 && $unidade != 0) {
-            //return $this->fetchAll($this->select()->where('status = ? AND unidade = ?', $status, $unidade));
-            return 'kk3';
+            $w = "unidade = " . $unidade . " AND status = " . $status;
+            $sql = $this->select()->where($w);
+            return $this->fetchAll($sql);
         }
     }
 

@@ -8,15 +8,19 @@ $(document).ready(function() {
             dataType: 'html',
             data: 'status='+status+'&unidade='+unidade,
             success: function(data) {
-                $('#tabela1 tbody').html(data);
+                $('#tabela1').html(data);
+                $('#tabela1').css('width', '100%');
+                $('#tabela1').css('margin', '0');
+                
+                
                 $('#tabela1').dataTable({
                     "sPaginationType": "full_numbers",
                     "aLengthMenu": [[5, 10, 20, -1], [5, 10, 20, "Todos"]],
                     "iDisplayLength": 5,
                     "oLanguage": {
-                            "sInfo": "Visualizando _START_ -  _END_  || Número de Registros: _TOTAL_",
-                            "sLengthMenu": "Exibir _MENU_ registros",
-                            "sEmptyTable": "Nenhum registro encontrado",
+                          "sInfo": "Visualizando _START_ -  _END_  || Número de Registros: _TOTAL_",
+                           "sLengthMenu": "Exibir _MENU_ registros",
+                           "sEmptyTable": "Nenhum registro encontrado",
                             "sInfoEmpty": "Nenhum registro encontrado",
                             "sZeroRecords": "Nenhum registro encontrado",
                             "sProcessing": "Pensando...",
@@ -26,8 +30,8 @@ $(document).ready(function() {
                                 "sLast": "Ultimo",
                                 "sNext": "Próximo",
                                 "sPrevious": "Anterior"
-                            }
-                    }
+                              }
+                        }
                 });
             }
         });

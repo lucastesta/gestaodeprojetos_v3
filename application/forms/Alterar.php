@@ -19,15 +19,14 @@ class Application_Form_Alterar extends Zend_Form
             '4' => 'Finalizado');
             $status->setAttrib('class', 'styled-select');
         }
-        else
+        else {
             $opcoes = array(
             '1' => 'Em Prospecção',
             '2' => 'Em Andamento',
             '3' => 'Recusado',
             '4' => 'Finalizado');
-        
-        $status->setMultiOptions($opcoes)
-                ->addValidator(new Zend_Validate_Int(), false);
+        }
+        $status->setMultiOptions($opcoes);
         return $status;
     }
     
@@ -49,7 +48,7 @@ class Application_Form_Alterar extends Zend_Form
         }
     }
     
-    public function setUnidadeSelect($nome){
+    public function setUnidadeSelect($nome, $style = true){
         $unidade = new Zend_Form_Element_Select($nome);
         $unidade->setMultiOptions(array(
             '0' => 'Todos',
@@ -58,7 +57,9 @@ class Application_Form_Alterar extends Zend_Form
             '3' => 'UN Polímeros',
             '4' => 'UN Sorocaba',
             '5' => 'Corporate'
-        ))->addValidator(new Zend_Validate_Int(), false)->setAttrib('class', 'styled-select');
+        ));
+        if($style)
+                $unidade->setAttrib('class', 'styled-select');
         return $unidade;
     }
     

@@ -101,7 +101,7 @@ class IndexController extends Zend_Controller_Action
         $this->view->cliente = $form->setText('cliente', 35);
         $this->view->tituloProjeto = $form->setText('tituloProjeto', 55);
         $this->view->subProjetoFAI = $form->setText('subProjetoFAI', 35);
-        $this->view->unidade = $form->setUnidadeSelect('unidade');
+        $this->view->unidade = $form->setUnidadeSelect('unidade', false);
         $this->view->resumo = $form->setTextArea('resumo', 12, 50);
         $this->view->origem = $form->setTextArea('origem', 12, 50);
         $this->view->dataAprovacao = $form->setText('dataAprovacao', 25,true,  array('class' => 'data'));

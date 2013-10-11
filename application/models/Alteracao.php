@@ -56,16 +56,17 @@ class Application_Model_Alteracao
      }
      
      public function parseToTable2($vetor) {
-         foreach($vetor as $t) {
-            $saida .= "<tr>";
-            $saida .= "<td>" . $this->decidiStatus($t['status']) . "</td>";
-            $saida .= "<td>" . $this->decidiUnidade($t['unidade']) . "</td>";
-            $saida .= "<td>" . $t['titulo'] . "</td>";
-            $saida .= "<td>" . $t['cliente'] . "</td>";
-            $saida .= "<td>" . $t['subprojetofai'] . "</td>";
-            $saida .= "</tr>";
+         $retorno = '';
+         for($i = 0; $i < count($vetor); $i++) {
+            $retorno .= "<tr>";
+            $retorno .= "<td>" . $this->decidiStatus($vetor[$i]['status']) . "</td>";
+            $retorno .= "<td>" . $this->decidiUnidade($vetor[$i]['unidade']) . "</td>";
+            $retorno .= "<td>" . $vetor[$i]['titulo'] . "</td>";
+            $retorno .= "<td>" . $vetor[$i]['cliente'] . "</td>";
+            $retorno .= "<td>" . $vetor[$i]['subprojetofai'] . "</td>";
+            $retorno .= "</tr>";
          }
-         return $saida;
+         return $retorno;
      }
      
      public function Busca($status = '', $unidade = '') {
@@ -73,7 +74,7 @@ class Application_Model_Alteracao
          if($status == '' && $unidade == '')
              return;
          else {
-             return $this->parseToTable($db_table->Busca($status, $unidade));
+             return $this->parseToTable2($db_table->Busca($status, $unidade));
          }
      }
 }

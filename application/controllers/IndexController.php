@@ -97,7 +97,7 @@ class IndexController extends Zend_Controller_Action
         $this->view->statusBusca = $form->setStatusSelect('statusBusca');
         $this->view->tabela = $model->parseToTable();
         
-        $this->view->status = $form->setStatusSelect('status');
+        $this->view->status = $form->setStatusSelect('status', false);
         $this->view->cliente = $form->setText('cliente', 35);
         $this->view->tituloProjeto = $form->setText('tituloProjeto', 55);
         $this->view->subProjetoFAI = $form->setText('subProjetoFAI', 35);

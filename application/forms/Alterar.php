@@ -9,15 +9,25 @@ class Application_Form_Alterar extends Zend_Form
     }
 
     
-    public function setStatusSelect($nome) {
+    public function setStatusSelect($nome, $busca = true) {
         $status = new Zend_Form_Element_Select($nome);
-        $status->setMultiOptions(array(
-            '0' => 'Todos',
+        if($busca) {
+            $opcoes = array('0' => 'Todos',
             '1' => 'Em Prospecção',
             '2' => 'Em Andamento',
             '3' => 'Recusado',
-            '4' => 'Finalizado'
-        ))->addValidator(new Zend_Validate_Int(), false)->setAttrib('class', 'styled-select');
+            '4' => 'Finalizado');
+            $status->setAttrib('class', 'styled-select');
+        }
+        else
+            $opcoes = array(
+            '1' => 'Em Prospecção',
+            '2' => 'Em Andamento',
+            '3' => 'Recusado',
+            '4' => 'Finalizado');
+        
+        $status->setMultiOptions($opcoes)
+                ->addValidator(new Zend_Validate_Int(), false);
         return $status;
     }
     

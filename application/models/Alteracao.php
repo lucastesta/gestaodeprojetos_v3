@@ -18,7 +18,7 @@ class Application_Model_Alteracao
         return $saida;
     }
     
-    public function decidiStatus($number) {
+    private function decidiStatus($number) {
         switch ($number) {
             case 1:
                 return 'Em Prospecção';
@@ -35,7 +35,7 @@ class Application_Model_Alteracao
         }
     }
         
-    public function decidiUnidade($number) {
+    private function decidiUnidade($number) {
             switch ($number) {
                case 1:
                      return 'UN Combustíveis';
@@ -55,7 +55,7 @@ class Application_Model_Alteracao
             }
      }
      
-     public function parseToTable2($vetor) {
+     private function parseToTable2($vetor) {
          $retorno = '';
          $retorno .= "<table cellspacing='0' padding='0' border='1' class='display' id='tabela1'>";
          $retorno .= "<thead>
@@ -69,7 +69,7 @@ class Application_Model_Alteracao
         </thead>
         <tbody style='text-align:center;'>"; 
          for($i = 0; $i < count($vetor); $i++) {
-            $retorno .= "<tr onclick='javascript:carrega('$vetor[$i]['id']');'>";
+            $retorno .= "<tr onclick='javascript:carrega(" . $vetor[$i]['id'] . ");'>";
             $retorno .= "<td>" . $this->decidiStatus($vetor[$i]['status']) . "</td>";
             $retorno .= "<td>" . $this->decidiUnidade($vetor[$i]['unidade']) . "</td>";
             $retorno .= "<td>" . $vetor[$i]['titulo'] . "</td>";
@@ -79,6 +79,42 @@ class Application_Model_Alteracao
          }
          $retorno .= "</tbody></table>";
          return $retorno;
+     }
+     
+     private function parseDateToBR($data) {
+         $data = explode("-", $data);
+         $data = $data[2] . "/" . $data[1] . "/" . $data[0];
+         return $data;
+      }
+      
+      private function parseToReais($valor) {
+          $valor = "R$ " . $valor;
+          return $valor;
+      }
+     
+     private function ArrayToCSV($vetor) {
+         $saida = '';
+         $saida .= $vetor[0]['id'] . ";";
+         $saida .= $vetor[0]['status'] . ";";
+         $saida .= $vetor[0]['cliente'] . ";";
+         $saida .= $vetor[0]['titulo'] . ";";
+         $saida .= $vetor[0]['subprojetofai'] . ";";
+         $saida .= $vetor[0]['unidade'] . ";";
+         $saida .= $vetor[0]['resumo'] . ";";
+         $saida .= $vetor[0]['origem'] . ";";
+         $saida .= $this->parseDateToBR($vetor[0]['dataaprovacao']) . ";";
+         $saida .= $vetor[0]['duracao'] . ";";
+         $saida .= $this->parseDateToBR($vetor[0]['dataprevistainicio']) . ";";
+         $saida .= $this->parseDateToBR($vetor[0]['dataprevistatermino']) . ";";
+         $saida .= $this->parseToReais($vetor[0]['valorproposto']) . ";";
+         $saida .= $vetor[0]['categoria'] . ";";
+         $saida .= $vetor[0]['ob'] . ";";
+         return $saida;
+     }
+     
+     public function preencheCamposAlteracao($id) {
+         $db_table = new Application_Model_DbTable_Projetos();
+         return $this->ArrayToCSV($db_table->buscaPorId($id));
      }
      
      public function Busca($status = '', $unidade = '') {

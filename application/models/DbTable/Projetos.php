@@ -19,6 +19,16 @@ class Application_Model_DbTable_Projetos extends Zend_Db_Table_Abstract
         return $this->fetchAll();
     }
     
+    public function buscaPorId($id = '') {
+             if($id == '') 
+                throw new Exception("ID PASSADO É INVÁLIDO");
+             else {
+                 $w = "id = " . $id;
+                 $sql = $this->select()->where($w);
+                 return $this->fetchAll($sql);
+             }
+    }
+    
     public function Busca($status = 0, $unidade = 0) {
         if($status == 0 && $unidade == 0){
             return $this->buscarTodos();

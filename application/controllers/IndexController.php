@@ -123,9 +123,15 @@ class IndexController extends Zend_Controller_Action
     {
         $this->getHelper('layout')->disableLayout();
         
+        if($this->getRequest()->isPost()) {
+            $model = new Application_Model_Alteracao();
+            $this->view->tabela = $model->Busca($this->getRequest()->getPost('status'), $this->getRequest()->getPost('unidade'));
+        }
         
-        $model = new Application_Model_Alteracao();
-        $this->view->tabela = $model->Busca($this->getRequest()->getPost('status'), $this->getRequest()->getPost('unidade'));
+        if($this->getRequest()->isGet()) {
+            $model = new Application_Model_Alteracao();
+            $this->view->tabela = $model->preencheCamposAlteracao($this->getRequest()->getParam('id'));
+        }
     }
 
 

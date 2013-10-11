@@ -24,6 +24,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $view->headLink()->appendStylesheet('/js/plugins/DataTables/media/css/demo_table.css');
         $view->headScript()->appendFile('/js/dataTable.js');
         $view->headScript()->appendFile('/js/buscaAlteracao.js');
+        $view->headScript()->appendFile('/js/carregaAltera.js');
         
     }
 

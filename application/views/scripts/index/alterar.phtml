@@ -1,7 +1,7 @@
 <h1 class="titulo_conteudo">Alteração de Projetos</h1>
 <div class="buscador">
     <form id="busca">
-        <input type="hidden" name="id" />
+        
         <div class="unidade_busca">
             <label>Unidade</label>
             <br/>
@@ -30,7 +30,7 @@
     </table>
 </div>
 <div class="linha_separadora"></div>
-<form method="post" action="/">
+<form method="post" action="/alteracao">
     <br />
     <div id="status" class="margem">
         <label class="label">Status do Projeto</label>
@@ -119,6 +119,7 @@
         <?php echo $this->ob; ?>  
     </div>
     <?php echo $this->submit; ?>
+    <input type="hidden" name="id_altera" id="id_altera"/>
 </form>
 </div>
 

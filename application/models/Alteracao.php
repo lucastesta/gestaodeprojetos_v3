@@ -2,6 +2,18 @@
 
 class Application_Model_Alteracao
 {
+    public function arrumaValor($valor) {
+        $resultado = str_replace('.', '', $valor);
+        $resultado = str_replace(',', '.', $resultado);
+        return $resultado;
+    }
+    
+    public function dataToMysql($data) {
+        $retorno = explode('/', $data);
+        $retorno = $retorno[2] . "-" . $retorno[1] . "-" . $retorno[0];
+        return $retorno;
+    }
+    
     public function parseToTable() {
         $projetos = new Application_Model_DbTable_Projetos();
         $tabela = $projetos->buscarTodos();
@@ -123,6 +135,17 @@ class Application_Model_Alteracao
              return;
          else {
              return $this->parseToTable2($db_table->Busca($status, $unidade));
+         }
+     }
+     
+     public function Altera($fields = array(), $id = -1) {
+         if($id == -1 || count($fields) == 0)
+             return false;
+         else {
+             $db_table = new Application_Model_DbTable_Projetos();
+             if($db_table->Alterar($fields, $id))
+                 return true;
+             return false;
          }
      }
 }

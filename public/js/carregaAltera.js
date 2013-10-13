@@ -6,7 +6,8 @@ function carrega(id) {
             data: "id=" + id,
             success: function(data) {
                 var valores = data.split(";");
-                $('input[name=id]').val(valores[0]);
+                $('#id_altera').val(valores[0]);
+       
                 
 		$('select[name=status]').val(valores[1]);
                 $('input[name=cliente]').val(valores[2]);

@@ -112,6 +112,58 @@ class IndexController extends Zend_Controller_Action
         $this->view->ProjetoServico = $form->setRadioServico('categoria');
         $this->view->ob = $form->setTextArea('ob', 12, 55);
         $this->view->submit = $form->setSubmit('Alterar');
+        
+        $form->addElements(array($this->view->cliente
+                            ,$this->view->status,
+                            $this->view->tituloProjeto,
+                            $this->view->subProjetoFAI,
+                            $this->view->unidade,
+                            $this->view->resumo,
+                            $this->view->origem,
+                            $this->view->dataAprovacao,
+                            $this->view->duracaoProjeto,
+                            $this->view->dataPrevistaIni,
+                            $this->view->dataPrevistaTer,
+                            $this->view->valorProposto,
+                            $this->view->ProjetoServico,
+                            $this->view->ob,
+                            $this->view->submit));
+        
+        
+        if($this->getRequest()->isPost()) {
+            $dados = $this->getRequest()->getPost();
+            $requisicao = $this->getRequest();
+            if($form->isValid($dados)) {
+                $alterar = array(
+               'status' => $requisicao->getPost('status'),
+               'cliente' => $requisicao->getPost('cliente'),
+               'titulo' => $requisicao->getPost('tituloProjeto'),
+               'subprojetofai' => $requisicao->getPost('subProjetoFAI'),
+               'unidade' => $requisicao->getPost('unidade'),
+               'resumo' => $requisicao->getPost('resumo'),
+               'origem' => $requisicao->getPost('origem'),
+               'dataaprovacao' => $model->dataToMysql($requisicao->getPost('dataAprovacao')),
+               'duracao' => $requisicao->getPost('duracaoProjeto'),
+               'dataprevistainicio' => $model->dataToMysql($requisicao->getPost('dataPrevistaIni')),
+               'dataprevistatermino' => $model->dataToMysql($requisicao->getPost('dataPrevistaTer')),
+               'valorproposto' => $model->arrumaValor($requisicao->getPost('valorProposto')),
+               'categoria' => $requisicao->getPost('categoria'),
+               'ob' => $requisicao->getPost('ob')
+            );
+        
+        
+            $res = $model->Altera($alterar, $requisicao->getPost('id_altera'));
+        
+            if($res) {
+                echo "<script>alert('Alterado com sucesso !');window.location='/alteracao';</script>";
+            }else 
+                echo "<script>alert('Oppps, This shoudl not happen. Contact Lucas Testa');</script>";
+          }
+          else {
+              echo "<script>alert('Campos inválidos');</script>";
+              $form->populate($dados);
+          }
+        }      
     }
 
     public function acompanharAction()

@@ -25,7 +25,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $view->headScript()->appendFile('/js/dataTable.js');
         $view->headScript()->appendFile('/js/buscaAlteracao.js');
         $view->headScript()->appendFile('/js/carregaAltera.js');
-        
+        $view->headScript()->appendFile('/js/desabilitaCampos.js');
     }
 
 }

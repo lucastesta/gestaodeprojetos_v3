@@ -168,7 +168,31 @@ class IndexController extends Zend_Controller_Action
 
     public function acompanharAction()
     {
-        // action body
+        $this->view->pagina = 'acompanha';
+        $form = new Application_Form_Acompanhar();
+        $model = new Application_Model_Acompanhamento();
+        
+        $this->view->unidadeBusca = $form->setUnidadeSelect('unidadeBusca', true);
+        $this->view->statusBusca = $form->setStatusSelect('statusBusca', true);
+        $this->view->submitBusca = $form->setButton('Buscar');
+        $this->view->unidadeBusca = $form->setUnidadeSelect('unidadeBusca');
+        $this->view->statusBusca = $form->setStatusSelect('statusBusca');
+        $this->view->tabela = $model->parseToTable();
+        
+        $this->view->status = $form->setStatusSelect('status', false);
+        $this->view->cliente = $form->setText('cliente', 35);
+        $this->view->tituloProjeto = $form->setText('tituloProjeto', 55);
+        $this->view->subProjetoFAI = $form->setText('subProjetoFAI', 35);
+        $this->view->unidade = $form->setUnidadeSelect('unidade', false);
+        $this->view->dataPreInicio = $form->setText('dataPreInicio', 25,true,  array('class' => 'data'));
+        $this->view->dataInicio = $form->setText('dataInicio', 25,true,  array('class' => 'data'));
+        $this->view->dataPreTermino = $form->setText('dataPreTermino', 25,true,  array('class' => 'data'));
+        $this->view->dataTermino = $form->setText('dataTermino', 25,true,  array('class' => 'data'));
+        $this->view->valorPago = $form->setText('valorPago', 20, true, array('class' => 'money'));
+        $this->view->investimentoFeito = $form->setText('investimentoFeito', 20, true, array('class' => 'money'));
+        $this->view->ob = $form->setTextArea('ob', 12, 55);
+        $this->view->submit = $form->setSubmit('Atualizar');
+        
     }
 
     public function buscarAction()

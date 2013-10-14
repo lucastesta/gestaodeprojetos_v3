@@ -121,6 +121,10 @@ class Application_Model_Alteracao
          $saida .= $this->parseToReais($vetor[0]['valorproposto']) . ";";
          $saida .= $vetor[0]['categoria'] . ";";
          $saida .= $vetor[0]['ob'] . ";";
+         $saida .= $this->parseDateToBR($vetor[0]['datarealinicio']) . ";";
+         $saida .= $this->parseDateToBR($vetor[0]['datarealtermino']) . ";";
+         $saida .= $this->parseToReais($vetor[0]['valorpago']) . ";";
+         $saida .= $this->parseToReais($vetor[0]['investimentorelizado']) . ";";
          return $saida;
      }
      

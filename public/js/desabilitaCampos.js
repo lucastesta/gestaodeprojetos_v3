@@ -5,8 +5,8 @@ $(document).ready(function() {
         $('input[name=tituloProjeto]').attr('disabled', 'disabled');
         $('input[name=subProjetoFAI').attr('disabled', 'disabled');
         $('select[name=unidade]').attr('disabled', 'disabled');
-        $('input[name=dataPreInicio]').attr('disabled', 'disabled');
-        $('input[name=dataPreTermino]').attr('disabled', 'disabled');
+        $('input[name=dataPrevistaIni]').attr('disabled', 'disabled');
+        $('input[name=dataPrevistaTer').attr('disabled', 'disabled');
     }
     
 });

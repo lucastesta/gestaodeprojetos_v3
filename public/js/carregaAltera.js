@@ -4,11 +4,11 @@ function carrega(id) {
             type: "GET",
             dataType: "html",
             data: "id=" + id,
-            success: function(data) {
+            success: function(data) {                
                 var valores = data.split(";");
                 $('#id_altera').val(valores[0]);
        
-                
+             
 		$('select[name=status]').val(valores[1]);
                 $('input[name=cliente]').val(valores[2]);
                 $('input[name=tituloProjeto').val(valores[3]);
@@ -21,6 +21,9 @@ function carrega(id) {
                 $('input[name=dataPrevistaIni').val(valores[10]);
                 $('input[name=dataPrevistaTer]').val(valores[11]);
                 $('input[name=valorProposto]').val(valores[12]);
+                $('input[name=valorPago]').val(valores[17]);
+                $('input[name=investimentoFeito]').val(valores[18]);
+                
                 $('#ob').val(valores[14]);
                 
                 if(valores[13] === "1")
@@ -28,6 +31,9 @@ function carrega(id) {
                 else
                     $('#categoria-2').attr('checked', true);
                 
+                
+                $('input[name=dataInicio]').val(valores[15]);
+                $('input[name=dataTermino]').val(valores[16]);
                 $('.buscador').slideToggle(500);
             },  
             error: function() {

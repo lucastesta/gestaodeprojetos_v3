@@ -184,16 +184,49 @@ class IndexController extends Zend_Controller_Action
         $this->view->tituloProjeto = $form->setText('tituloProjeto', 55);
         $this->view->subProjetoFAI = $form->setText('subProjetoFAI', 35);
         $this->view->unidade = $form->setUnidadeSelect('unidade', false);
-        $this->view->dataPreInicio = $form->setText('dataPreInicio', 25,true,  array('class' => 'data'));
+        $this->view->dataPrevistaIni = $form->setText('dataPrevistaIni', 25,true,  array('class' => 'data'));
         $this->view->dataInicio = $form->setText('dataInicio', 25,true,  array('class' => 'data'));
-        $this->view->dataPreTermino = $form->setText('dataPreTermino', 25,true,  array('class' => 'data'));
+        $this->view->dataPrevistaTer = $form->setText('dataPrevistaTer', 25,true,  array('class' => 'data'));
         $this->view->dataTermino = $form->setText('dataTermino', 25,true,  array('class' => 'data'));
         $this->view->valorPago = $form->setText('valorPago', 20, true, array('class' => 'money'));
         $this->view->investimentoFeito = $form->setText('investimentoFeito', 20, true, array('class' => 'money'));
         $this->view->ob = $form->setTextArea('ob', 12, 55);
         $this->view->submit = $form->setSubmit('Atualizar');
         
-    }
+         $form->addElements(array($this->view->status,
+             $this->view->dataInicio, $this->view->dataTermino, $this->view->valorPago,
+                 $this->view->investimentoFeito, $this->view->ob, $this->view->submit));
+         
+         
+      
+        if($this->getRequest()->isPost()) {
+            $dados = $this->getRequest()->getPost();
+            $requisicao = $this->getRequest();
+            if($form->isValid($dados)) {
+                //echo "<script>alert('lucas');</script>";
+                 $alterar = array('status' => $requisicao->getPost('status'),
+                     'datarealinicio' => $model->dataToMysql($requisicao->getPost('dataInicio')),
+                     'datarealtermino' => $model->dataToMysql($requisicao->getPost('dataTermino')),
+                     'valorpago' => $model->arrumaValor($requisicao->getPost('valorPago')),
+                     'investimentorelizado' => $model->arrumaValor($requisicao->getPost('investimentoFeito')),
+                     'ob' => $requisicao->getPost('ob'));
+                 
+                 
+                  $res = $model->Altera($alterar, $requisicao->getPost('id_altera'));
+                  
+                  if($res) {
+                      echo "<script>alert('Atualizado com Sucesso !!!');window.location='/acompanhamento';</script>";
+                  }   
+                  else {
+                      echo "<script>alert('Oppps, This shoudl not happen. Contact Lucas Testa');</script>";
+                  }
+            } else {
+                echo "<script>alert('Campos inválidos');</script>";
+                $form->populate($dados);
+            }
+        }
+         
+     }
 
     public function buscarAction()
     {

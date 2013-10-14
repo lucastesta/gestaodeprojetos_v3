@@ -149,14 +149,18 @@ class IndexController extends Zend_Controller_Action
                'categoria' => $requisicao->getPost('categoria'),
                'ob' => $requisicao->getPost('ob')
             );
-        
-        
+            
+            if($requisicao->getPost('mexeuValorProposto') == '1')    
+                $alterar['valorproposto'] = $model->arrumaValor ($requisicao->getPost('valorProposto'));
+            
+            
             $res = $model->Altera($alterar, $requisicao->getPost('id_altera'));
-        
-            if($res) {
+
+                
+            if($res > 0) {
                 echo "<script>alert('Alterado com sucesso !');window.location='/alteracao';</script>";
             }else 
-                echo "<script>alert('Oppps, This should not happen. Contact Lucas Testa');</script>";
+                echo "<script>alert('Nenhum Registro Alterado !');</script>";
           }
           else {
               echo "<script>alert('Campos inválidos');</script>";

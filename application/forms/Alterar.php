@@ -35,9 +35,7 @@ class Application_Form_Alterar extends Zend_Form
         $texto->setRequired(true)
                 ->addFilter('StripTags')
                 ->addFilter('StringTrim')
-                ->setAttrib('size', $size)
-                ->addValidator('NotEmpty')
-                ->addErrorMessage('Valor não pode ser vazio');
+                ->setAttrib('size', $size);
         if(!$add)
             return $texto;
         if($add) {

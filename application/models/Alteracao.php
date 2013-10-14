@@ -142,14 +142,13 @@ class Application_Model_Alteracao
          }
      }
      
-     public function Altera($fields = array(), $id = -1) {
+     public function Altera($fieldss = array(), $id = -1) {
          if($id == -1)
              return false;
          else {
              $db_table = new Application_Model_DbTable_Projetos();
-             if($db_table->Alterar($fields, $id))
-                 return true;
-             
+             return $db_table->Alterar($fieldss, $id);    
+            
          }
      }
 }

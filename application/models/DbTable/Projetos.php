@@ -18,10 +18,10 @@ class Application_Model_DbTable_Projetos extends Zend_Db_Table_Abstract
     public function Alterar($fields = array(), $where = -1) {
         if(count($fields) == 0 || $where == -1)
             return false;
-        $res = $this->update($fields, 'id = ' . $where);
-        if($res)
-            return true;
-        return false;
+        //$this->update(array('cliente' => 'Tessta'), "id =" . 4);
+        return $this->update($fields, "id =" . $where);
+        
+        
     }
     
     public function buscarTodos() {

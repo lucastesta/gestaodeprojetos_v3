@@ -143,13 +143,13 @@ class Application_Model_Alteracao
      }
      
      public function Altera($fields = array(), $id = -1) {
-         if($id == -1 || count($fields) == 0)
+         if($id == -1)
              return false;
          else {
              $db_table = new Application_Model_DbTable_Projetos();
              if($db_table->Alterar($fields, $id))
                  return true;
-             return false;
+             
          }
      }
 }

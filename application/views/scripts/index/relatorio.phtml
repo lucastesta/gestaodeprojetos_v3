@@ -1,0 +1,141 @@
+<style>
+   
+#busca {
+    border-bottom: 1px solid #000;
+    height: 65px;
+    width: 1350px;
+    margin: auto;
+}
+
+#tabela1_wrapper {
+	margin:auto;
+	margin-top: 10px;
+	margin-bottom:10px;
+	width:1350px;
+		
+}
+
+ #tabela1_paginate {
+	margin-top:5px;
+	margin-bottom:10px;
+}
+
+#tabela1_length {
+	background-color:#ad2525;
+	color:#fff;
+	padding-left:5px;
+	width:665px;
+	height:25px;
+}
+
+#tabela1_filter {
+	background-color:#ad2525;
+	color:#fff;
+	height:24px;
+	padding-top:1px;
+	padding-right:5px;
+}
+
+#tabela1_info {
+	margin-top:1px;
+	background-color:#ad2525;
+	height:25px;
+	width:610px;
+	color:#fff;
+	padding-top:8px;
+	padding-left:5px;
+}
+
+#tabela1_first {
+	background-color:#fff;
+	font-weight:bold;
+	font-size:1.1em;
+}
+
+
+
+#tabela1_previous {
+	background-color:#fff;
+	font-weight:bold;
+	font-size:1.1em;
+}
+
+
+#tabela1_next {
+	background-color:#fff;
+	font-weight:bold;
+	font-size:1.1em;
+}
+
+
+#tabela1_last {
+	background-color:#fff;
+	font-weight:bold;
+	font-size:1.1em;
+}
+
+.paging_full_numbers a.paginate_active {
+	background-color:#BEBEBE;
+	font-size:1.1em;
+}
+
+.paging_full_numbers a.paginate_button {
+	background-color:#fff;
+	font-weight:bold;
+	font-size:1.1em;
+}
+#tabela1_paginate {
+	margin-top:1px;
+	background-color:#ad2525;
+	height:28px;
+	padding-top:5px;
+	padding-right:20px;
+        width: 715px;
+}
+table.dataTable {}
+table.dataTable tr.odd { background-color:  #FFFFCC;font-size:13px; }
+table.dataTable tr.odd td.sorting_1{ background-color:  #FFFFCC; }
+#tabela1 tbody tr.odd:hover td{transition: all .1s ease-in; background-color:#C00000;color:#fff;}
+
+
+
+table.dataTable tr.even { background-color: #FFF;font-size:13px;}
+table.dataTable tr.even td.sorting_1{ background-color: #FFF;}
+#tabela1 tbody tr.even:hover td{transition: all .1s ease-in; background-color:#C00000;color:#fff;}
+</style>
+<h1 class="titulo_conteudo">Relatórios</h1>
+<div class="buscadorRelatorios">
+    <form id="busca"> 
+        <div class="unidade_busca">
+            <label>Unidade</label>
+            <br/>
+            <?php echo $this->unidadeBusca; ?>
+        </div>
+        <div class="status_busca">
+            <label>Status</label>
+            <br/>
+            <?php echo $this->statusBusca; ?>
+        </div>
+        <div class="botao_pesquisa">
+            <?php echo $this->submitBusca; ?>
+        </div>
+    </form>
+    <table id="tabela1" cellspacing="0" padding="0" border="1" class="display">
+        <thead>
+            <tr>
+                <th>Status</th>
+		<th>Unidade</th>  
+                <th>Cliente</th>
+                <th>Título do Projeto</th>
+                <th>Valor Proposto</th>
+                <th>Valor Pago</th>
+                <th>Valor a Receber</th>
+                <th>Valor Investido</th>
+                <th>Tipo de Projeto</th>
+                <th>Data de Início</th>
+                <th>Data de Término</th>
+            </tr>
+        </thead>
+         <?php echo $this->tabela; ?>
+    </table>
+</div>

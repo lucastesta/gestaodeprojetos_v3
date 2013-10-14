@@ -146,7 +146,6 @@ class IndexController extends Zend_Controller_Action
                'duracao' => $requisicao->getPost('duracaoProjeto'),
                'dataprevistainicio' => $model->dataToMysql($requisicao->getPost('dataPrevistaIni')),
                'dataprevistatermino' => $model->dataToMysql($requisicao->getPost('dataPrevistaTer')),
-               'valorproposto' => $model->arrumaValor($requisicao->getPost('valorProposto')),
                'categoria' => $requisicao->getPost('categoria'),
                'ob' => $requisicao->getPost('ob')
             );
@@ -157,7 +156,7 @@ class IndexController extends Zend_Controller_Action
             if($res) {
                 echo "<script>alert('Alterado com sucesso !');window.location='/alteracao';</script>";
             }else 
-                echo "<script>alert('Oppps, This shoudl not happen. Contact Lucas Testa');</script>";
+                echo "<script>alert('Oppps, This should not happen. Contact Lucas Testa');</script>";
           }
           else {
               echo "<script>alert('Campos inválidos');</script>";
@@ -226,7 +225,7 @@ class IndexController extends Zend_Controller_Action
             }
         }
          
-     }
+    }
 
     public function buscarAction()
     {
@@ -240,11 +239,28 @@ class IndexController extends Zend_Controller_Action
         if($this->getRequest()->isGet()) {
             $model = new Application_Model_Alteracao();
             $this->view->tabela = $model->preencheCamposAlteracao($this->getRequest()->getParam('id'));
+        
         }
+    }
+
+    public function relatorioAction()
+    {
+        $this->view->pagina = 'relatorios';
+        $form = new Application_Form_Relatorios();
+        $model = new Application_Model_Relatorio();
+        
+        $this->view->unidadeBusca = $form->setUnidadeSelect('unidadeBusca', true);
+        $this->view->statusBusca = $form->setStatusSelect('statusBusca', true);
+        $this->view->submitBusca = $form->setButton('Buscar');
+        $this->view->unidadeBusca = $form->setUnidadeSelect('unidadeBusca');
+        $this->view->statusBusca = $form->setStatusSelect('statusBusca');
+        $this->view->tabela = $model->parseToTable();
     }
 
 
 }
+
+
 
 
 

@@ -80,6 +80,18 @@ nav ul li a:hover {
 	border-radius:0.9%;
 }
 
+#relatorios {
+    min-width: 1170px;
+    width: 1400px;
+    max-width: 2000px;
+    border:1px solid #000;
+    font-family:Ubuntu;
+    margin:auto;
+    margin-top:70px;
+    height: auto;
+    border-radius:1%;
+}
+
 #acompanha {
     	min-width:1170px;
 	width:1200px;
@@ -205,6 +217,13 @@ input[type=submit], button {
 .buscador {
     border:1px solid black;
     width:1000px;
+    height: 400px;
+    margin: auto;
+}
+
+.buscadorRelatorios {
+    border: 1px solid #000;
+    width: 1350px;
     height: 400px;
     margin: auto;
 }

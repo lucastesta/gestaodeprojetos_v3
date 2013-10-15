@@ -6,13 +6,13 @@ function SomenteNumero(e){
 	}	
 }
 
-$.fn.message = function() {
-  alert('kkkkk');
+$.fn.message = function(msg) {
+  alert(msg);
 };
 
 
 function teste() {
-    $.fn.message();
+    $.fn.message('lucas');
 }
 
 

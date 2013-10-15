@@ -11,12 +11,12 @@ function carrega(id) {
              
 		$('select[name=status]').val(valores[1]);
                 $('input[name=cliente]').val(valores[2]);
-                $('input[name=tituloProjeto').val(valores[3]);
-                $('input[name=subProjetoFAI').val(valores[4]);
+                $('input[name=tituloProjeto]').val(valores[3]);
+                $('input[name=subProjetoFAI]').val(valores[4]);
                 $('#unidade').val(valores[5]);
                 $('#resumo').val(valores[6]);
                 $('#origem').val(valores[7]);
-                $('input[name=dataAprovacao').val(valores[8]);
+                $('input[name=dataAprovacao]').val(valores[8]);
                 $('input[name=duracaoProjeto]').val(valores[9]);
                 $('input[name=dataPrevistaIni').val(valores[10]);
                 $('input[name=dataPrevistaTer]').val(valores[11]);

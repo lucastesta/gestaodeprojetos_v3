@@ -6,13 +6,14 @@ function SomenteNumero(e){
 	}	
 }
 
+$.fn.message = function() {
+  alert('kkkkk');
+};
 
-$(document).ready(function() {
-    $('input[name=Alterar]').click(function() {
-        var resultado = $('input[name=result').val();
-        alert(resultado);
-    });   
-});
+
+function teste() {
+    $.fn.message();
+}
 
 
 

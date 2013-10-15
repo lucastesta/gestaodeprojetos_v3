@@ -18,7 +18,7 @@ function carrega(id) {
                 $('#origem').val(valores[7]);
                 $('input[name=dataAprovacao]').val(valores[8]);
                 $('input[name=duracaoProjeto]').val(valores[9]);
-                $('input[name=dataPrevistaIni').val(valores[10]);
+                $('input[name=dataPrevistaIni]').val(valores[10]);
                 $('input[name=dataPrevistaTer]').val(valores[11]);
                 $('input[name=valorProposto]').val(valores[12]);
                 $('input[name=valorPago]').val(valores[17]);

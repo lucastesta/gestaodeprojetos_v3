@@ -158,7 +158,7 @@ class IndexController extends Zend_Controller_Action
 
                 
             if($res > 0) {
-                echo "<script type='text/javascript'>mensagem('lucas');</script>";
+                echo "<script type='text/javascript'>mensagem('Alterado som Sucesso !');</script>";
             }else 
                 echo "<script>alert('Nenhum Registro Alterado !');</script>";
           }

@@ -8,5 +8,5 @@ function SomenteNumero(e){
 
 
 function mensagem(msg) {
-    alert(msg);
+    jAlert('success', msg, 'Success Dialog');
 }

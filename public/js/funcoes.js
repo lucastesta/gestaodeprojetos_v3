@@ -7,7 +7,7 @@ function SomenteNumero(e){
 }
 
 $.fn.message = function(msg) {
-  alert(msg);
+  jAlert('success', 'deu certo !!!', 'Success Dialog');
 };
 
 

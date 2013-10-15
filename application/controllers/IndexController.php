@@ -155,7 +155,9 @@ class IndexController extends Zend_Controller_Action
             
             
             $res = $model->Altera($alterar, $requisicao->getPost('id_altera'));
-            echo "<script>teste('caralho');</script>";
+            if($res > 0){
+                echo "<script>teste('caralho');</script>";
+            }
           }
           else {
               echo "<script>alert('Campos inválidos');</script>";

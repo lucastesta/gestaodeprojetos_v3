@@ -6,7 +6,8 @@ function SomenteNumero(e){
 	}	
 }
 
-
-function mensagem(msg) {
-    jAlert('success', msg, 'Success Dialog');
-}
+$(document).ready(function() {
+    function mensagem(msg) {
+     jAlert('success', 'This is the success dialog.', 'Success Dialog');
+    }
+});

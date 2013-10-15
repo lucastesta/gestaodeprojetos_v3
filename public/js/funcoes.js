@@ -5,3 +5,8 @@ function SomenteNumero(e){
         	return false;				
 	}	
 }
+
+
+function mensagem(msg) {
+    alert(msg);
+}

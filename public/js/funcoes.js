@@ -6,13 +6,13 @@ function SomenteNumero(e){
 	}	
 }
 
-$.fn.message = function(msg) {
-  jAlert('success', 'deu certo !!!', 'Success Dialog');
+$.fn.message = function() {
+   jAlert('success', 'This is the success dialog.', 'Success Dialog');
 };
 
 
 function teste(msg) {
-    $.fn.message(msg);
+    $.fn.message();
 }
 
 

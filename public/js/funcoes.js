@@ -7,11 +7,7 @@ function SomenteNumero(e){
 }
 
 $(document).ready(function() {
-    
-    function mensagem(msg)
-    {
-        alert(msg);
-    }
-    
-    
+    $('input[name=Alterar]').click(function() {
+        jAlert('success', 'lalala', 'Sucess Dialog');
+    });
 });

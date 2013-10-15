@@ -11,8 +11,8 @@ $.fn.message = function(msg) {
 };
 
 
-function teste() {
-    $.fn.message('lucas');
+function teste(msg) {
+    $.fn.message(msg);
 }
 
 

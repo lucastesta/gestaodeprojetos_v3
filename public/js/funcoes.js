@@ -8,8 +8,10 @@ function SomenteNumero(e){
 
 
 $(document).ready(function() {
-    var resultado = $('input[name=result').val();
-    alert(resultado);
+    $('input[name=Alterar]').click(function() {
+        var resultado = $('input[name=result').val();
+        alert(resultado);
+    });   
 });
 
 

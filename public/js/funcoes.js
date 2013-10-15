@@ -7,11 +7,11 @@ function SomenteNumero(e){
 }
 
 $.fn.message = function() {
-   jAlert('success', 'This is the success dialog.', 'Success Dialog');
+   alert('lucas');
 };
 
 
-function teste(msg) {
+function teste() {
     $.fn.message();
 }
 

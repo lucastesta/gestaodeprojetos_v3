@@ -210,18 +210,21 @@ class IndexController extends Zend_Controller_Action
                  $alterar = array('status' => $requisicao->getPost('status'),
                      'datarealinicio' => $model->dataToMysql($requisicao->getPost('dataInicio')),
                      'datarealtermino' => $model->dataToMysql($requisicao->getPost('dataTermino')),
-                     'valorpago' => $model->arrumaValor($requisicao->getPost('valorPago')),
-                     'investimentorelizado' => $model->arrumaValor($requisicao->getPost('investimentoFeito')),
                      'ob' => $requisicao->getPost('ob'));
+                 
+                 if($requisicao->getPost('mexeuInvestimento') == "1")
+                     $alterar['investimentorelizado'] = $model->arrumaValor ($requisicao->getPost('investimentoFeito'));
+                 if($requisicao->getPost('mexeValor') == "1")
+                     $alterar['valorpago'] = $model->arrumaValor ($requisicao->getPost('valorPago'));
                  
                  
                   $res = $model->Altera($alterar, $requisicao->getPost('id_altera'));
                   
-                  if($res) {
+                  if($res > 0) {
                       echo "<script>alert('Atualizado com Sucesso !!!');window.location='/acompanhamento';</script>";
                   }   
                   else {
-                      echo "<script>alert('Oppps, This shoudl not happen. Contact Lucas Testa');</script>";
+                      echo "<script>alert('Nada modificado !');</script>";
                   }
             } else {
                 echo "<script>alert('Campos inválidos');</script>";

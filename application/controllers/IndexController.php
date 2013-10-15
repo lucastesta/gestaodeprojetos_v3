@@ -155,12 +155,7 @@ class IndexController extends Zend_Controller_Action
             
             
             $res = $model->Altera($alterar, $requisicao->getPost('id_altera'));
-
-                
-            if($res > 0) {
-               echo "<script>exibermensagem('hahaha');</script>";
-            }else 
-                echo "<script>alert('Nenhum Registro Alterado !');</script>";
+            $this->view->resultado = $res;
           }
           else {
               echo "<script>alert('Campos inválidos');</script>";

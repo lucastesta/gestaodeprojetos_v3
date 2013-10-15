@@ -6,10 +6,11 @@ function SomenteNumero(e){
 	}	
 }
 
-function exibermensagem(msg) {
-    $(document).ready(function() {
-        jAlert('success', 'lalala', 'Sucess Dialog');
-    });
-}
+
+$(document).ready(function() {
+    var resultado = $('input[name=result').val();
+    alert(resultado);
+});
+
 
 

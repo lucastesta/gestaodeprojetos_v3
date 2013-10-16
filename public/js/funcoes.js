@@ -6,14 +6,14 @@ function SomenteNumero(e){
 	}	
 }
 
-$.fn.message = function() {
-   alert('lucas');
-};
 
 
-function teste() {
-    $.fn.message();
-}
+
+
+
+
+
+
 
 
 

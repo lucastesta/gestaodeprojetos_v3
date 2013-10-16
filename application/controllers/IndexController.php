@@ -27,9 +27,10 @@ class IndexController extends Zend_Controller_Action
         $this->view->dataPrevistaIni = $form->setText('dataPrevistaIni', 25,true, array('class' => 'data'));
         $this->view->dataPrevistaTer = $form->setText('dataPrevistaTer', 25, true, array('class' => 'data'));
         $this->view->valorProposto = $form->setText('valorProposto', 20, true, array('class' => 'money'));
+        $this->view->valorInvestimento = $form->setText('valorInvestimento', 20, true, array('class' => 'money'));
         $this->view->ProjetoServico = $form->setRadioServico('categoria');
         $this->view->ob = $form->setTextArea('ob', 12, 55);
-        $this->view->submit = $form->setSubmit('cadastrar');
+        $this->view->submit = $form->setSubmit('Cadastrar');
         
         $form->addElements(array($this->view->cliente
                             ,$this->view->status,
@@ -43,6 +44,7 @@ class IndexController extends Zend_Controller_Action
                             $this->view->dataPrevistaIni,
                             $this->view->dataPrevistaTer,
                             $this->view->valorProposto,
+                            $this->view->valorInvestimento,
                             $this->view->ProjetoServico,
                             $this->view->ob,
                             $this->view->submit));
@@ -64,6 +66,7 @@ class IndexController extends Zend_Controller_Action
                'dataprevistainicio' => $model->dataToMysql($requisicao->getPost('dataPrevistaIni')),
                'dataprevistatermino' => $model->dataToMysql($requisicao->getPost('dataPrevistaTer')),
                'valorproposto' => $model->arrumaValor($requisicao->getPost('valorProposto')),
+               'investimentoprevisto' => $model->arrumaValor($requisicao->getPost('valorInvestimento')),
                'categoria' => $requisicao->getPost('categoria'),
                'ob' => $requisicao->getPost('ob')
             );
@@ -109,6 +112,7 @@ class IndexController extends Zend_Controller_Action
         $this->view->dataPrevistaIni = $form->setText('dataPrevistaIni', 25,true, array('class' => 'data'));
         $this->view->dataPrevistaTer = $form->setText('dataPrevistaTer', 25, true, array('class' => 'data'));
         $this->view->valorProposto = $form->setText('valorProposto', 20, true, array('class' => 'money'));
+        $this->view->valorInvestimento = $form->setText('valorInvestimento', 20, true, array('class' => 'money'));
         $this->view->ProjetoServico = $form->setRadioServico('categoria');
         $this->view->ob = $form->setTextArea('ob', 12, 55);
         $this->view->submit = $form->setSubmit('Alterar');
@@ -125,6 +129,7 @@ class IndexController extends Zend_Controller_Action
                             $this->view->dataPrevistaIni,
                             $this->view->dataPrevistaTer,
                             $this->view->valorProposto,
+                            $this->view->valorInvestimnto,
                             $this->view->ProjetoServico,
                             $this->view->ob,
                             $this->view->submit));
@@ -152,11 +157,13 @@ class IndexController extends Zend_Controller_Action
             
             if($requisicao->getPost('mexeuValorProposto') == '1')    
                 $alterar['valorproposto'] = $model->arrumaValor ($requisicao->getPost('valorProposto'));
+            if($requisicao->getPost('mexeuInvestimentoProposto') == 1)
+                $alterar['investimentoprevisto'] = $model->arrumaValor ($requisicao->getPost('valorInvestimento'));
             
             
             $res = $model->Altera($alterar, $requisicao->getPost('id_altera'));
             if($res > 0){
-                echo "<script>teste();</script>";
+               echo "<script>mostraa('1');</script>";
             }
           }
           else {

@@ -27,9 +27,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $view->headScript()->appendFile('/js/carregaAltera.js');
         $view->headScript()->appendFile('/js/desabilitaCampos.js');
         $view->headScript()->appendFile('/js/mexeuValorProposto');
-        $view->headScript()->appendFile('/js/plugins/jquery.alerts1.1/jquery.alert.js');
-        $view->headScript()->appendFile('/js/plugins/jquery.alerts1.1/jquery.ui.draggable.js');
-        $view->headLink()->appendStylesheet('/js/plugins/jquery.alerts1.1/jquery.alert.css');
+        $view->headScript()->appendFile('/js/plugins/jquery.alerts-1.1/jquery.alerts.js');
+        $view->headLink()->appendStylesheet('/js/plugins/jquery.alerts-1.1/jquery.alerts.css');
     }
 
 }

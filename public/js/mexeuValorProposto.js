@@ -10,4 +10,8 @@ $(document).ready(function() {
     $('input[name=investimentoFeito]').focus(function() {
         $('input[name=mexeuInvestimento]').val('1');
     });
+    
+    $('input[name=valorInvestimento]').focus(function() {
+       $('input[name=mexeuInvestimentoProposto]').val('1'); 
+    });
 });

@@ -113,7 +113,12 @@
         <label class="sub_label">Insira o valor total proposto para o projeto</label>
         <?php echo $this->valorProposto; ?>
         <br/>
-        <label class="label">Esse projeto é ?</label>
+        <label class="label">Valor Previsto de Investimento (em R$)</label>
+        <br/>
+        <label class="sub_label">Insira o valor total previsto de investimento</label>
+        <?php echo $this->valorInvestimento; ?>
+        <br/>
+        <label class="label">Este projeto é ?</label>
         <?php echo $this->ProjetoServico; ?>
         <br/>
         <label class="label">Observações</label>
@@ -122,5 +127,6 @@
     <?php echo $this->submit; ?>
     <input type="hidden" name="id_altera" id="id_altera"/>
     <input type="hidden" name="mexeuValorProposto" value="0" />
+    <input type="hidden" name="mexeuInvestimentoProposto" value="0"/>
 </form>
 

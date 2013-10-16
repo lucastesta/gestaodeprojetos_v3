@@ -34,6 +34,7 @@ function carrega(id) {
                 
                 $('input[name=dataInicio]').val(valores[15]);
                 $('input[name=dataTermino]').val(valores[16]);
+                $('input[name=valorInvestimento]').val(valores[19]);
                 $('.buscador').slideToggle(500);
             },  
             error: function() {

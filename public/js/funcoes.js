@@ -6,6 +6,12 @@ function SomenteNumero(e){
 	}	
 }
 
+$(document).ready(function() {
+    $('input[name=Alterar]').click(function() {
+        jAlert('mensagem', 'Alert Dialog');
+    });
+});
+
 
 
 

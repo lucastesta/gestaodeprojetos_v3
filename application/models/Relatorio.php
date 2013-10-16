@@ -87,6 +87,7 @@ class Application_Model_Relatorio
             $saida .= "<td>" . $this->parseValorToMascara($t['valorpago']) . "</td>";
             $valorPMenosvalorP = $t['valorproposto'] - $t['valorpago'];
             $saida .= "<td>" . $this->parseValorToMascara($valorPMenosvalorP) . "</td>";
+            $saida .= "<td>" . $this->parseValorToMascara($t['investimentoprevisto']) . "</td>";
             $saida .= "<td>" . $this->parseValorToMascara($t['investimentorelizado']) . "</td>";
             $saida .= "<td>" . $this->decidiTipoProjeto($t['categoria']) . "</td>";
             $saida .= "<td>" . $this->parseDateToBR($t['datarealinicio']) . "</td>";

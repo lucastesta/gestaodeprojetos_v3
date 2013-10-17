@@ -22,10 +22,10 @@ class IndexController extends Zend_Controller_Action
         $this->view->unidade = $form->setUnidadeSelect('unidade');
         $this->view->resumo = $form->setTextArea('resumo', 12, 50);
         $this->view->origem = $form->setTextArea('origem', 12, 50);
-        $this->view->dataAprovacao = $form->setText('dataAprovacao', 25,true,  array('class' => 'data'));
-        $this->view->duracaoProjeto = $form->setText('duracaoProjeto', 25,true,  array('onkeypress' => 'return SomenteNumero(event)'));
-        $this->view->dataPrevistaIni = $form->setText('dataPrevistaIni', 25,true, array('class' => 'data'));
-        $this->view->dataPrevistaTer = $form->setText('dataPrevistaTer', 25, true, array('class' => 'data'));
+        $this->view->dataAprovacao = $form->setText('dataAprovacao', 20,true,  array('class' => 'data'));
+        $this->view->duracaoProjeto = $form->setText('duracaoProjeto', 20,true,  array('onkeypress' => 'return SomenteNumero(event)'));
+        $this->view->dataPrevistaIni = $form->setText('dataPrevistaIni', 20,true, array('class' => 'data'));
+        $this->view->dataPrevistaTer = $form->setText('dataPrevistaTer', 20, true, array('class' => 'data'));
         $this->view->valorProposto = $form->setText('valorProposto', 20, true, array('class' => 'money'));
         $this->view->valorInvestimento = $form->setText('valorInvestimento', 20, true, array('class' => 'money'));
         $this->view->ProjetoServico = $form->setRadioServico('categoria');

@@ -195,6 +195,7 @@ class IndexController extends Zend_Controller_Action
         $this->view->dataInicio = $form->setText('dataInicio', 25,true,  array('class' => 'data'));
         $this->view->dataPrevistaTer = $form->setText('dataPrevistaTer', 25,true,  array('class' => 'data'));
         $this->view->dataTermino = $form->setText('dataTermino', 25,true,  array('class' => 'data'));
+        $this->view->valorProposto = $form->setText('valorProposto', 25, true, array('class' => 'money'));
         $this->view->valorPago = $form->setText('valorPago', 20, true, array('class' => 'money'));
         $this->view->investimentoFeito = $form->setText('investimentoFeito', 20, true, array('class' => 'money'));
         $this->view->ob = $form->setTextArea('ob', 12, 55);

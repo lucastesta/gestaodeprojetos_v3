@@ -7,6 +7,7 @@ $(document).ready(function() {
         $('select[name=unidade]').attr('disabled', 'disabled');
         $('input[name=dataPrevistaIni]').attr('disabled', 'disabled');
         $('input[name=dataPrevistaTer').attr('disabled', 'disabled');
+        
     }
     
 });

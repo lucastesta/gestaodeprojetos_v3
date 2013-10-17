@@ -64,8 +64,8 @@ class Application_Form_Acompanhar extends Zend_Form
     
     public function setTextArea($nome, $row, $col) {
         $area = new Zend_Form_Element_Textarea($nome);
-        $area->setRequired(true)
-             ->addValidator('NotEmpty')
+        
+        $area
                 ->addFilter('StripTags')
                 ->addFilter('StringTrim')
                 ->addErrorMessage('Escreva uma mensagem');

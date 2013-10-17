@@ -96,11 +96,24 @@
     </div>
     <h4 class="separador margem" id="financeiro">Financeiro</h4>
     <div id="financeiro_div" class="margem">
-        <br/>
-        <label class="label">Valor pago do Projeto (em R$)</label>
-        <br/>
-        <label class="sub_label">Atualize o valor pago para o projeto até o momento</label>
-        <?php echo $this->valorPago; ?>
+        <div id="valores">
+            <div id="valorpropostoAcomp">
+                 
+                <label class="label">Valor Proposto do Projeto (em R$)</label>
+                <br/>
+                <label class="sub_label">Valor Proposto do Projeto (Conferência) </label>
+                <?php echo $this->valorProposto; ?>
+            </div>
+            <div id="valorpagoAcomp">
+                <label class="label">Valor pago do Projeto (em R$)</label>
+                <br/>
+                <label class="sub_label">Atualize o valor pago para o projeto até o momento</label>
+                <?php echo $this->valorPago; ?>
+            </div>
+         
+            
+        </div>
+        
         <br/>
         <label class="label">Investimento realizado (em R$)</label>
         <br/>

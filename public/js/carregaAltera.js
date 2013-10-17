@@ -21,6 +21,7 @@ function carrega(id) {
                 $('input[name=dataPrevistaIni]').val(valores[10]);
                 $('input[name=dataPrevistaTer]').val(valores[11]);
                 $('input[name=valorProposto]').val(valores[12]);
+               
                 $('input[name=valorPago]').val(valores[17]);
                 $('input[name=investimentoFeito]').val(valores[18]);
                 

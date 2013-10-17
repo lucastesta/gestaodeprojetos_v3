@@ -8,19 +8,18 @@
 
 #valores {
     width:800px;
-    border:1px solid blue;
+   
     height: 67px;
 }
 
 #valorpropostoAcomp {
-    border:1px solid black;
+  
     width:300px;
     float:left;
 
 }
 
 #valorpagoAcomp {
-    border:1px solid red;
     width: 350px;
     float:left;
     margin-left: 20px;

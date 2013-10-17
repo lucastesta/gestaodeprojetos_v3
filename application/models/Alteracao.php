@@ -100,7 +100,8 @@ class Application_Model_Alteracao
       }
       
       private function parseToReais($valor) {
-          $valor = "R$ " . $valor;
+          //$valor = "R$ " . $valor;
+          $valor = 'R$ ' .  number_format($valor, 2, ',', '.');
           return $valor;
       }
      

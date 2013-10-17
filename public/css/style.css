@@ -5,24 +5,22 @@
    
 }
 
-
 #valores {
     width:800px;
-   
-    height: 67px;
+    height:205px;
 }
 
-#valorpropostoAcomp {
-  
-    width:300px;
+#valoresquerdaacomp {
+    width:380px;
+    height: 200px;
     float:left;
-
 }
 
-#valorpagoAcomp {
-    width: 350px;
+#investimentosdireitaacomp {
+    width:380px;
+    height: 200px;
     float:left;
-    margin-left: 20px;
+    margin-left:20px;
 }
 
 header {

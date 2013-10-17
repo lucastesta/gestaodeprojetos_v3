@@ -32,10 +32,11 @@ function carrega(id) {
                 else
                     $('#categoria-2').attr('checked', true);
                 
-                
+                $('input[name=investimentoPrevisto]').val(valores[19]);
                 $('input[name=dataInicio]').val(valores[15]);
                 $('input[name=dataTermino]').val(valores[16]);
                 $('input[name=valorInvestimento]').val(valores[19]);
+               
                 $('.buscador').slideToggle(500);
             },  
             error: function() {

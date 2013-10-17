@@ -97,32 +97,35 @@
     <h4 class="separador margem" id="financeiro">Financeiro</h4>
     <div id="financeiro_div" class="margem">
         <div id="valores">
-            <div id="valorpropostoAcomp">
-                 
+            <div id="valoresquerdaacomp">
                 <label class="label">Valor Proposto do Projeto (em R$)</label>
                 <br/>
                 <label class="sub_label">Valor Proposto do Projeto (Conferência) </label>
                 <?php echo $this->valorProposto; ?>
-            </div>
-            <div id="valorpagoAcomp">
-                <label class="label">Valor pago do Projeto (em R$)</label>
                 <br/>
-                <label class="sub_label">Atualize o valor pago para o projeto até o momento</label>
-                <?php echo $this->valorPago; ?>
+                <br/>
+                <label class="label">Investimento Previsto (em R$)</label>
+                <br/>
+                <label class="sub_label">Investimento Previsto (Conferência) </label>
+                <?php echo $this->investimentoPrevisto; ?>
             </div>
-         
-            
+            <div id="investimentosdireitaacomp">
+                <label class="label">Valor Pago do Projeto (em R$)</label>
+                <br/>
+                <label class="sub_label">Atualize o Valor Pago do Projeto </label>
+                <?php echo $this->valorPago; ?>
+                <br/>
+                <br/>
+                <label class="label">Investimento Realizado (em R$)</label>
+                <br/>
+                <label class="sub_label">Atualize o Valor Investido do Projeto (Conferência) </label>
+                <?php echo $this->investimentoFeito; ?>
+            </div>
         </div>
-        
-        <br/>
-        <label class="label">Investimento realizado (em R$)</label>
-        <br/>
-        <label class="sub_label">Atualize o valor investido para o projeto até o momento</label>
-        <?php echo $this->investimentoFeito; ?>
-        <br/>
         <label class="label">Observações</label>
-        <?php echo $this->ob; ?>  
-     </div>
+        <br/>
+        <?php echo $this->ob; ?>
+    </div>
     <?php echo $this->submit; ?>
     <input type="hidden" name="id_altera" id="id_altera"/>
     <input type="hidden" name="mexeValor" value="0" />

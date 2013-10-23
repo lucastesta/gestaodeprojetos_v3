@@ -1,6 +1,6 @@
 function carrega(id) {
      $.ajax({
-       url:  "http://gestaodeprojetos_v3.local/buscar",
+       url:  "http://www.gestaodeprojetos.ccdm.ufscar.br/buscar",
             type: "GET",
             dataType: "html",
             data: "id=" + id,
@@ -39,8 +39,8 @@ function carrega(id) {
                
                 $('.buscador').slideToggle(500);
             },  
-            error: function() {
-                    alert('error');
+            error: function(request, status, error) {
+                    alert(request.responseText);
             }
         });
     }

@@ -5,6 +5,12 @@
    
 }
 
+.linha_separadora {
+	border:1px solid #000;
+	clear:both;
+	width:100%;
+}
+
 #valores {
     width:800px;
     height:205px;
@@ -242,9 +248,9 @@ input[type=submit], button {
 }
 
 .buscador {
-    border:1px solid black;
+
     width:1000px;
-    height: 400px;
+    height:300px;
     margin: auto;
 }
 
@@ -282,7 +288,7 @@ input[type=submit], button {
     margin-left: 10px;
 }
 
-#submitBusca {
+#submitBuscaAlteracao, #submitBuscaAcompanhamento, #submitBuscaRelatorios{
     margin: 0;
 }
 
@@ -315,7 +321,7 @@ input[type=submit], button {
 	box-shadow:3px 3px 3px #000;
 }
 
-#submitBusca {
+#submitBuscaAlteracao, #submitBuscaAcompanhamento, #submitBuscaRelatorios {
     margin-top: 20px;
     height: 35px;
     -moz-border-radius: 5px;

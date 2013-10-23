@@ -76,7 +76,7 @@ class IndexController extends Zend_Controller_Action
             $res = $model->Inserir($inserir);
         
             if($res) {
-                echo "<script>alert('Cadastrado com sucesso !');window.location='index';</script>";
+                echo "<script>alert('Cadastrado com sucesso !');window.location='Index';</script>";
             }else 
                 echo "<script>alert('Oppps, This shoudl not happen. Contact Lucas Testa');</script>";
           }
@@ -163,8 +163,10 @@ class IndexController extends Zend_Controller_Action
             
             $res = $model->Altera($alterar, $requisicao->getPost('id_altera'));
             if($res > 0){
-               echo "<script>mostraa('1');</script>";
+               echo "<script>alert('Alterado com Sucesso !');location='alteracao';</script>";
             }
+	    else
+		echo "<script>alert('Nada foi alterado');location='alteracao';</script>";
           }
           else {
               echo "<script>alert('Campos inválidos');</script>";
@@ -246,7 +248,14 @@ class IndexController extends Zend_Controller_Action
         
         if($this->getRequest()->isPost()) {
             $model = new Application_Model_Alteracao();
-            $this->view->tabela = $model->Busca($this->getRequest()->getPost('status'), $this->getRequest()->getPost('unidade'));
+		$unidade = $this->getRequest()->getPost('unidade');
+		$status = $this->getRequest()->getPost('status');
+		$rel = 0;
+		$rel = $this->getRequest()->getPost('relatorio');
+		if($rel == 0) 
+	            $this->view->tabela = $model->Busca($this->getRequest()->getPost('status'), $this->getRequest()->getPost('unidade'));
+		else
+			$this->view->tabela = $model->BuscaRel($this->getRequest()->getPost('status'), $this->getRequest()->getPost('unidade'));
         }
         
         if($this->getRequest()->isGet()) {
@@ -254,6 +263,7 @@ class IndexController extends Zend_Controller_Action
             $this->view->tabela = $model->preencheCamposAlteracao($this->getRequest()->getParam('id'));
         
         }
+
     }
 
     public function relatorioAction()

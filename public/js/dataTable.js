@@ -20,7 +20,15 @@ $(document).ready(function() {
         }
     });
     
-    $('#submitBusca').click(function() {
+    $('#submitBuscaAlteracao').click(function() {
         tabela.fnDestroy();
     });
+
+	$('#submitBuscaAcompanhamento').click(function() {
+		tabela.fnDestroy();
+	});
+
+	$('#submitBuscaRelatorios').click(function() {
+			tabela.fnDestroy();
+	});
 });

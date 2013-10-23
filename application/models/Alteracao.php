@@ -2,6 +2,23 @@
 
 class Application_Model_Alteracao
 {
+	private function decidiTipoProjeto($valor) {
+        switch ($valor) {
+            case 1:
+                return 'Projeto';
+                break;
+            case 2:
+                return 'Serviço Tecnológico';
+                break;
+        }
+    }
+
+
+
+	private function parseValorToMascara($valor) {
+        return 'R$' . number_format($valor, 2, ',', '.');
+    }	
+
     public function arrumaValor($valor) {
         $resultado = str_replace('.', '', $valor);
         $resultado = str_replace(',', '.', $resultado);
@@ -66,6 +83,49 @@ class Application_Model_Alteracao
                    break;
             }
      }
+
+ private function parseToTable3($vetor) {
+         $retorno = '';
+         $retorno .= "<table cellspacing='0' padding='0' border='1' class='display' id='tabela1'>";
+         $retorno .= "<thead>
+            <tr>
+                <th>Status</th>
+                <th>Unidade</th>
+                <th>Cliente</th>
+                <th>Título do Projeto</th>
+                <th>Valor Proposto</th>
+		<th>Valor Pago</th>
+		<th>Valor a Receber</th>
+		<th>Investimento Previsto</th>
+		<th>Investimento Investido</th>
+		<th>Tipo de Projeto</th>
+		<th>Data de Início</th>
+		<th>Data de Término</th>
+            </tr>
+        </thead>
+        <tbody style='text-align:center;'>";
+         for($i = 0; $i < count($vetor); $i++) {
+           $retorno .= "<tr>";
+            $retorno .= "<td>" . $this->decidiStatus($vetor[$i]['status']) . "</td>";
+            $retorno .= "<td>" . $this->decidiUnidade($vetor[$i]['unidade']) . "</td>";
+            $retorno .= "<td>" . $vetor[$i]['cliente'] . "</td>";
+            $retorno .= "<td>" . $vetor[$i]['titulo'] . "</td>";
+            $retorno .= "<td>" . $this->parseValorToMascara($vetor[$i]['valorproposto']) . "</td>";
+            $retorno .= "<td>" . $this->parseValorToMascara($vetor[$i]['valorpago']) . "</td>";
+            $valorPMenosvalorP = $vetor[$i]['valorproposto'] - $vetor[$i]['valorpago'];
+            $retorno .= "<td>" . $this->parseValorToMascara($valorPMenosvalorP) . "</td>";
+            $retorno .= "<td>" . $this->parseValorToMascara($vetor[$i]['investimentoprevisto']) . "</td>";
+            $retorno .= "<td>" . $this->parseValorToMascara($vetor[$i]['investimentorelizado']) . "</td>";
+            $retorno .= "<td>" . $this->decidiTipoProjeto($vetor[$i]['categoria']) . "</td>";
+            $retorno .= "<td>" . $this->parseDateToBR($vetor[$i]['datarealinicio']) . "</td>";
+            $retorno .= "<td>" . $this->parseDateToBR($vetor[$i]['datarealtermino']) . "</td>";
+            $retorno .= "</tr>";
+
+         }
+         $retorno .= "</tbody></table>";
+         return $retorno;
+     }
+
      
      private function parseToTable2($vetor) {
          $retorno = '';
@@ -144,6 +204,16 @@ class Application_Model_Alteracao
          }
      }
      
+
+	public function BuscaRel($status = '', $unidade = '') {
+         $db_table = new Application_Model_DbTable_Projetos();
+         if($status == '' && $unidade == '')
+             return;
+         else {
+             return $this->parseToTable3($db_table->Busca($status, $unidade));
+         }
+     }
+
      public function Altera($fieldss = array(), $id = -1) {
          if($id == -1)
              return false;

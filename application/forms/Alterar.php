@@ -91,7 +91,7 @@ class Application_Form_Alterar extends Zend_Form
     public function setButton($name) {
         $campo = new Zend_Form_Element_Button($name);
         $campo->setValue('Buscar');
-        $campo->setAttrib('id', 'submitBusca');
+        $campo->setAttrib('id', 'submitBuscaAlteracao');
         return $campo;
     }
 

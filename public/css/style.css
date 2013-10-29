@@ -13,20 +13,19 @@
 
 #valores {
     width:800px;
-    height:205px;
+    height:auto;
 }
 
+
 #valoresquerdaacomp {
-    width:380px;
-    height: 200px;
-    float:left;
+    width:800px;
+    height: 100px;
 }
 
 #investimentosdireitaacomp {
-    width:380px;
-    height: 200px;
-    float:left;
-    margin-left:20px;
+    width:800px;
+    height: 220px;
+    
 }
 
 header {
@@ -205,21 +204,21 @@ dt {
     float:left;
     width:240px;
     height:60px;
-    margin-left:15px;
+    margin-left:19px;
 }
 
 #dataprevistainicio {
     float:left;
     width:240px;
     height:60px;
-    margin-left: 15px;
+    margin-left: 19px;
 }
 
 #dataprevistatermino {
     float:left;
     width:240px;
     height:60px;
-    margin-left: 15px;
+    margin-left: 19px;
 }
 
 #prazos_div {

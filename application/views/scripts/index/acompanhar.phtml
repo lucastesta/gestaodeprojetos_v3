@@ -98,30 +98,46 @@
     <div id="financeiro_div" class="margem">
         <div id="valores">
             <div id="valoresquerdaacomp">
-                <label class="label">Valor Proposto do Projeto (em R$)</label>
-                <br/>
-                <label class="sub_label">Valor Proposto do Projeto (Conferência) </label>
-                <?php echo $this->valorProposto; ?>
-                <br/>
-                <br/>
-                <label class="label">Investimento Previsto (em R$)</label>
-                <br/>
-                <label class="sub_label">Investimento Previsto (Conferência) </label>
-                <?php echo $this->investimentoPrevisto; ?>
+                <div class="esquerda">
+                    <label class="label">Valor Proposto do Projeto (em R$)</label>
+                    <br/>
+                    <label class="sub_label">Valor Proposto do Projeto (Conferência) </label>
+                    <?php echo $this->valorProposto; ?>
+                </div>
+                <div class="direita">
+                    <label class="label">Investimento Previsto (em R$)</label>
+                    <br/>
+                    <label class="sub_label">Investimento Previsto (Conferência) </label>
+                    <?php echo $this->investimentoPrevisto; ?>             
+                </div>  
             </div>
             <div id="investimentosdireitaacomp">
-                <label class="label">Valor Pago do Projeto (em R$)</label>
-                <br/>
-                <label class="sub_label">Atualize o Valor Pago do Projeto </label>
-                <?php echo $this->valorPago; ?>
-                <br/>
-                <br/>
-                <label class="label">Investimento Realizado (em R$)</label>
-                <br/>
-                <label class="sub_label">Atualize o Valor Investido do Projeto (Conferência) </label>
-                <?php echo $this->investimentoFeito; ?>
+                <div class="esquerda">
+                    <label>Número de Parcelas Pagas = <span id="valorPagoLabel">0</span></label>
+                    <br/>
+                    <a id="addParcela" style="color:blue;font-size: 15px;cursor: hand;cursor: pointer;" href="#" >Nova Parcela</a>
+                    <br/>
+                    <div id="parcelas">
+                        <p>
+                        
+                        </p>
+                    </div>
+                    
+                    <br/>
+                    <br/>
+                    <label class="label">Valor Pago do Projeto (em R$)</label>
+                    <?php echo $this->valorPago; ?>
+                </div>
+                
+                <div class="direita">
+                    <label class="label">Investimento Realizado (em R$)</label>
+                    <br/>
+                    <label class="sub_label">Atualize o Valor Investido do Projeto</label>
+                    <?php echo $this->investimentoFeito; ?>
+                </div>
             </div>
-        </div>
+            </div>
+            <br/>
         <label class="label">Observações</label>
         <br/>
         <?php echo $this->ob; ?>

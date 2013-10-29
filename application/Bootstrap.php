@@ -29,6 +29,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $view->headScript()->appendFile('/js/mexeuValorProposto');
         $view->headScript()->appendFile('/js/plugins/jquery.alerts-1.1/jquery.alerts.js');
         $view->headLink()->appendStylesheet('/js/plugins/jquery.alerts-1.1/jquery.alerts.css');
+        $view->headScript()->appendFile('/js/addField.js');
     }
 }
 

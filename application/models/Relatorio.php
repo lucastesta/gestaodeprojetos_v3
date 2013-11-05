@@ -37,7 +37,7 @@ class Application_Model_Relatorio
                    return 'UN Polímeros';
                    break;
                case 4:
-                   return 'Un Sorocaba';
+                   return 'UN Sorocaba';
                    break;
                case 5:
                    return 'Corporate';

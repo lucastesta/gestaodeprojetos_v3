@@ -6,6 +6,10 @@ function SomenteNumero(e){
 	}	
 }
 
+function fechaa() {
+            window.open('','_self');
+            window.close();
+}
 
 
 

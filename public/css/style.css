@@ -2,7 +2,6 @@
     padding: 0;
     margin: 0;
     font-family: 'Ubuntu';
-   
 }
 
 .linha_separadora {
@@ -18,12 +17,12 @@
 
 
 #valoresquerdaacomp {
-    width:800px;
+    width:1000px;
     height: 100px;
 }
 
 #investimentosdireitaacomp {
-    width:800px;
+    width:1000px;
     height: 220px;
     
 }
@@ -69,7 +68,7 @@ nav ul li {
 nav ul li a {
 	padding:15px 10px;
 	text-decoration:none;
-	font-family: Ubuntu, 'Electrolize', sans-serif;
+	font-family: 'Ubuntu', 'Electrolize', sans-serif;
 	color:#FFF;
 	font-size:1.2em;
 	transition: all .3s ease-out;
@@ -91,7 +90,7 @@ nav ul li a:hover {
         max-width: 1800px;
         font-size: 100%;
 	border:1px solid #000;
-	font-family:Ubuntu;
+	font-family:'Ubuntu';
 	margin:auto;
 	margin-top:70px;
 	height: auto;
@@ -104,7 +103,7 @@ nav ul li a:hover {
         max-width: 1800px;
         font-size: 100%;
 	border:1px solid #000;
-	font-family:Ubuntu;
+	font-family:'Ubuntu';
 	margin:auto;
 	margin-top:70px;
 	height: auto;
@@ -116,7 +115,7 @@ nav ul li a:hover {
     width: 1400px;
     max-width: 2000px;
     border:1px solid #000;
-    font-family:Ubuntu;
+    font-family:'Ubuntu';
     margin:auto;
     margin-top:70px;
     height: auto;
@@ -129,7 +128,7 @@ nav ul li a:hover {
         max-width: 1800px;
         font-size: 100%;
 	border:1px solid #000;
-	font-family:Ubuntu;
+	font-family:'Ubuntu';
 	margin:auto;
 	margin-top:70px;
 	height: auto;
@@ -151,9 +150,7 @@ nav ul li a:hover {
 	padding-bottom:15px;
 }
 
-label {
-	font-family:Times;
-}
+
 
 .sub_label {
 	color:#778899;
@@ -195,7 +192,7 @@ dt {
 }
 
 #dataapp {
-    width: 240px;
+    width: 275px;
     height: 60px;
     float: left;
 }
